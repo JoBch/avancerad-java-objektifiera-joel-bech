@@ -15,6 +15,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+import com.google.gson.*;
+
 public class Main extends Application {
 
     public TableView<String[]> myTable;
@@ -112,8 +114,77 @@ public class Main extends Application {
     }
 
     public void chosenFileJson() {
-        //Was supposed to put in a json method here but could not get it to work so thrashed it.
-        System.out.println("Not a chance.");
+/*
+        This method is made with the help of chatGPT.
+        I made the base of the code by myself based on the code from chosenFileCSV, as I didn't understand the magic in Gson
+        I had to use chatGPT to explain it for me and use its input to make the last 20% of the code.
+*/
+        try {
+            File f = new File(String.valueOf(file));
+            Scanner sc = new Scanner(f);
+
+            if (sc.hasNext()) {
+                //Scanner read the document and puts it in a string
+                //\\Z is a delimiter which indicates the end of the file, so the scanner reads the whole file
+                String fileContent = sc.useDelimiter("\\Z").next();
+
+                //Using Gson to parse the Json file into a Jsonarray
+                JsonArray jsonArray = JsonParser.parseString(fileContent).getAsJsonArray();
+
+                //Gets the column headers from the first JSON object
+                JsonObject firstObject = jsonArray.get(0).getAsJsonObject();
+                //Creates a Tablecolumn for each
+                firstObject.keySet().forEach(name -> {
+                    String columnName = name;
+                    TableColumn<String[], String> column = new TableColumn<>(columnName);
+                    //CellValue dictates what is in my columns, using the column list to do so
+                    column.setCellValueFactory(param -> {
+                        String[] row = param.getValue();
+                        if (row != null && row.length > getIndex(firstObject, name)) {
+                            return new SimpleStringProperty(row[getIndex(firstObject, name)]);
+                        } else {
+                            return null;
+                        }
+                    });
+                    //Adding my columns to my table using column variable from for loop
+                    myTable.getColumns().add(column);
+                });
+
+                //Reading the remaining lines to fill the rows/columns in my table
+                //Skipping the first JsonArray as it is my headers
+                for (int i = 1; i < jsonArray.size(); i++) {
+                    JsonObject rowData = jsonArray.get(i).getAsJsonObject();
+                    String[] rowValues = new String[firstObject.size()];
+                    rowData.entrySet().forEach(member -> {
+                        int index = getIndex(firstObject, member.getKey());
+                        if (index >= 0 && index < rowValues.length) {
+                            rowValues[index] = member.getValue().getAsString();
+                        }
+                    });
+                    //Adding my rowValues to the right index depending on columnHeader values
+                    tableData.add(rowValues);
+                }
+            }
+
+            sc.close();
+            //Setting all the values to my table
+            myTable.setItems(tableData);
+
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    //A method to help my JsonObject find what columnHeader to put the data in
+    private int getIndex(JsonObject jsonObject, String key) {
+        int index = 0;
+        for (String name : jsonObject.keySet()) {
+            if (name.equals(key)) {
+                return index;
+            }
+            index++;
+        }
+        return -1;
     }
 }
 

@@ -23,8 +23,7 @@ public class Controller extends Main {
         if (file.getName().endsWith(".csv")) {
             chosenFileCSV();
         } else {
-            //chosenFileJson();
-            //Was supposed to put in a json method here but could not get it to work
+            chosenFileJson();
         }
     }
 
@@ -33,7 +32,6 @@ public class Controller extends Main {
     void onClickClearTable(ActionEvent event) {
         myTable.getColumns().clear();
         tableData.clear();
-
     }
 
     //Bult in SortEvent from table

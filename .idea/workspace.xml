@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2825d88f-9db6-470d-ac06-560ece84aa39" name="Changes" comment="Fixed gson not being used anymore" />
+    <list default="true" id="2825d88f-9db6-470d-ac06-560ece84aa39" name="Changes" comment="Fixed gson not being used anymore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavaobjektifierajoelbech/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavaobjektifierajoelbech/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavaobjektifierajoelbech/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavaobjektifierajoelbech/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/avanceradjavaobjektifierajoelbech/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/avanceradjavaobjektifierajoelbech/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/avanceradjavaobjektifierajoelbech/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/avanceradjavaobjektifierajoelbech/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,18 +32,23 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2Yo0ts7hxESPvI0sVdplRXotZNS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "true",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/joelb/OneDrive/Skrivbord/Avancerad JAVA/Avancerad-java-Objektifiera-Joel-Bech",
     "project.structure.last.edited": "Libraries",
@@ -93,6 +106,7 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Fixed gson not being used anymore" />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed gson not being used anymore" />
   </component>
